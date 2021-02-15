@@ -1,8 +1,11 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import App from "./components/app/app";
+import GlobalStyles from "./styles/global-styles";
 
 ReactDOM.render(
-  <App name={`Ivan`} />,
-  document.querySelector(`#root`)
+    <>
+      <GlobalStyles/>
+      <App name={`Ivan`} />
+    </>,
+    document.querySelector(`#root`)
 );
-

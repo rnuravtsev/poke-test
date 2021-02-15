@@ -28,6 +28,7 @@ settings:
     version: '16'
 
 rules:
+  object-curly-spacing: ['error', 'always', { 'arraysInObjects': true, 'objectsInObjects': true }]
   quote-props: ['error', 'as-needed']
   react-hooks/rules-of-hooks: error
   react-hooks/exhaustive-deps: warn

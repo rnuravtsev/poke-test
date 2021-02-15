@@ -1,11 +1,15 @@
-const App = ({name}) => {
+import Title from "../title/title";
+
+const App = ({ name }) => {
   return (
-    <h1>Hello, {name}</h1>
+    <Title>
+      Hello, {name}
+    </Title>
   );
 };
 
 App.propTypes = {
-  name: PropTypes.string.isRequired
-}
+  name: PropTypes.string.isRequired,
+};
 
 export default App;
