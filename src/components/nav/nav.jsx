@@ -7,20 +7,18 @@ import ListItem from "@material-ui/core/ListItem";
 
 const Nav = () => {
   return (
-    <List>
-      <ListItem>
+    <List component="nav">
+      <ListItem component={NavLink} exact to={`/`}>
         <HomeIcon />
-        <NavLink exact to={`/`}>
-          Main
-        </NavLink>
+        Main
       </ListItem>
-      <ListItem>
+      <ListItem component={NavLink} exact to={`/pokemons`}>
         <ListIcon />
-        <NavLink exact to={`/pokemons`}>All Pokemons</NavLink>
+        All Pokemons
       </ListItem>
-      <ListItem>
+      <ListItem component={NavLink} exact to={`/contacts`}>
         <ContactsIcon />
-        <NavLink exact to={`/contacts`}>Contacts</NavLink>
+        Contacts
       </ListItem>
     </List>
   );
