@@ -1,28 +1,23 @@
-import Title from "../title/title";
-import Container from "../../containers/container/container";
-import Row from "../../containers/row/row";
-import Col from "../../containers/col/col";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import MainScreen from "../../screens/main-screen/main-screen";
+import ContactsScreen from "../../screens/contacts-screen/contacts-screen";
+import BaseLayout from "../base-layout/base-layout";
 
-const App = ({ name }) => {
+const App = () => {
   return (
-    <Container>
-      <Row>
-        <Col col={4}>
-          <Title>Hello, {name}</Title>
-        </Col>
-        <Col col={4}>
-          <Title>Hello, {name}</Title>
-        </Col>
-        <Col col={4}>
-          <Title>Hello, {name}</Title>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <BrowserRouter>
+        <BaseLayout>
+          <Switch>
+            <Route exact path="/" component={MainScreen} />
+          </Switch>
+          <Switch>
+            <Route exact path="/contacts" component={ContactsScreen} />
+          </Switch>
+        </BaseLayout>
+      </BrowserRouter>
+    </>
   );
-};
-
-App.propTypes = {
-  name: PropTypes.string.isRequired,
 };
 
 export default App;

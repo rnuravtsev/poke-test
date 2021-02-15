@@ -5,9 +5,11 @@ const GlobalStyles = createGlobalStyle`
 ${normalize}
   html {
     box-sizing: border-box;
+    font-family: 'Roboto', 'Arial', sans-serif;
   }
   body {
-    background-color: #ff2800
+    min-width: 320px;
+    background-color: ${(props) => props.theme.palette.grey.white}
   }
   *, *:before, *:after {
     box-sizing: border-box;
@@ -20,7 +22,7 @@ ${normalize}
   height: 1px;
   width: 1px;
   overflow: hidden;
-}
+  }
 `;
 
 export default GlobalStyles;
