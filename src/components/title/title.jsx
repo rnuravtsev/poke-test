@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Title = styled(`div`)`
+const Title = styled(`h1`)`
   background-color: red
 `;
 
