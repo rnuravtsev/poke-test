@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom";
-import App from "./components/app/app";
+import App from "./components/app/app.connect";
 import GlobalStyles from "./styles/global-styles";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./styles/theme";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -9,6 +10,10 @@ import rootReducer from "./store/reducers/root-reducer";
 import thunk from "redux-thunk";
 import { createAPI } from "./services/api";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { StylesProvider } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+
+const defaultTheme = createMuiTheme(theme);
 
 const api = createAPI();
 
@@ -19,10 +24,14 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <App/>
-      </ThemeProvider>
+      <StylesProvider injectFirst>
+        <ThemeProvider theme={defaultTheme}>
+          <StyledThemeProvider theme={theme}>
+            <GlobalStyles />
+            <App />
+          </StyledThemeProvider>
+        </ThemeProvider>
+      </StylesProvider>
     </Provider>,
     document.querySelector(`#root`)
 );

@@ -3,43 +3,37 @@ import Header from "../sections/header/header";
 import Footer from "../sections/footer/footer";
 import Logo from "../commons/logo/logo";
 import Dev from "../commons/dev/dev";
-import Sidebar from "../commons/sidebar/sidebar";
-import Main from "../commons/main/main";
-import Nav from "../nav/nav";
+import MobileMenu from "../commons/mobile-menu/mobile-menu";
+import Middle from "../sections/middle/middle";
 
 const BaseLayout = (props) => {
   return (
-    <>
-      <Header>
-        <Grid container>
-          <Grid item>
-            <Logo />
-          </Grid>
-        </Grid>
-      </Header>
-      <Grid container>
-        <Grid item>
-          <Sidebar>
-            <Nav />
-          </Sidebar>
-        </Grid>
-        <Grid item>
-          <Main>{props.children}</Main>
-        </Grid>
+    <Grid container>
+      <Grid
+        item
+        container
+        justify="space-between"
+        alignContent="center"
+        xs={12}
+        component={Header}
+      >
+        <Logo />
+        <MobileMenu />
       </Grid>
-      <Footer>
-        <Grid container>
-          <Grid item xs={6}>
-            <Logo />
-          </Grid>
-          <Grid item xs={6}>
-            <Dev>
-              <p>@rnuravtsev</p>
-            </Dev>
-          </Grid>
+      <Middle>
+        {props.children}
+      </Middle>
+      <Grid
+        container
+        alignItems="center"
+        component={Footer}
+      >
+        <Grid item xs={6}>
+          <Logo />
         </Grid>
-      </Footer>
-    </>
+        <Grid item xs={6} component={Dev} />
+      </Grid>
+    </Grid>
   );
 };
 

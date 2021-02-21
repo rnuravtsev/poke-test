@@ -1,10 +1,10 @@
 export const ActionType = {
-  LOAD_POKEMONS: `LOAD_POKEMONS`,
+  SET_POKEMONS: `SET_POKEMONS`,
   SET_APP_READY: `SET_APP_READY`
 };
 
-export const loadPokemons = (pokemons) => ({
-  type: ActionType.LOAD_POKEMONS,
+export const setPokemons = (pokemons) => ({
+  type: ActionType.SET_POKEMONS,
   payload: pokemons
 });
 

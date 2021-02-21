@@ -7,7 +7,7 @@ const initialState = {
 
 const appData = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.LOAD_POKEMONS:
+    case ActionType.SET_POKEMONS:
       return extend(state, {
         pokemons: action.payload,
       });

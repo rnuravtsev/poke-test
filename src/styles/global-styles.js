@@ -23,6 +23,10 @@ ${normalize}
   width: 1px;
   overflow: hidden;
   }
+  img {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export default GlobalStyles;
