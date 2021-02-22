@@ -3,13 +3,13 @@ import { normalize } from "styled-normalize";
 
 const GlobalStyles = createGlobalStyle`
 ${normalize}
-  html {
-    box-sizing: border-box;
-    font-family: 'Roboto', 'Arial', sans-serif;
-  }
   body {
     min-width: 320px;
-    background-color: ${(props) => props.theme.palette.grey.white}
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
+    background-color: ${(props) => props.theme.palette.white}
   }
   *, *:before, *:after {
     box-sizing: border-box;

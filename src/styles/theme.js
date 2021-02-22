@@ -25,7 +25,7 @@ export const theme = {
   media: {
     phoneAlbum: `(min-width: 576px)`,
     tablet: `(min-width: 768px)`,
-    notebook: `(min-width: 992px)`,
+    laptop: `(min-width: 992px)`,
     desktop: `(min-width: 1200px)`
   },
 };

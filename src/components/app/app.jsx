@@ -2,13 +2,14 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 // import Loading from "../commons/loading/loading";
 // import SkeletonApp from "../skeleton-app/skeleton-app";
 import BaseLayout from "../base-layout/base-layout";
-import MainScreen from "../../screens/main-screen/main-screen";
+import MainScreen from "../../screens/main-screen/main-screen.connect";
 import PokemonsScreen from "../../screens/pokemons-screen/pokemons-screen";
 import ContactsScreen from "../../screens/contacts-screen/contacts-screen";
+
 import { pokemonsType } from "../../common-prop-types";
 
 const App = (props) => {
-  const { pokemons, isAppReady, initApplication } = props;
+  const { initApplication } = props;
   React.useEffect(() => {
     initApplication();
   }, [initApplication]);
@@ -21,9 +22,7 @@ const App = (props) => {
             <Route
               exact
               path="/"
-              render={() => (
-                <MainScreen isAppReady={isAppReady} pokemons={pokemons} />
-              )}
+              component={MainScreen}
             />
           </Switch>
           <Switch>

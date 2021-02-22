@@ -1,30 +1,32 @@
 import styled from "styled-components";
-import { Grid } from "@material-ui/core";
 import Sidebar from "../../commons/sidebar/sidebar";
 import Nav from "../../nav/nav";
 import Main from "../../commons/main/main";
 
 const StyledMiddle = styled.div`
-  min-height: 78vh;
+  @media ${(p) => p.theme.media.tablet} {
+    grid-area: middle;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+  @media ${(p) => p.theme.media.desktop} {
+    grid-template-columns: 300px 1fr;
+  }
 `;
 
 const Middle = (props) => {
   return (
-    <Grid container component={StyledMiddle}>
-      <Grid item xs={12} md={2} component={Sidebar}>
+    <StyledMiddle>
+      <Sidebar>
         <Nav />
-      </Grid>
-      <Grid item xs={12} md={10}>
-        <Main>
-          {props.children}
-        </Main>
-      </Grid>
-    </Grid>
+      </Sidebar>
+      <Main>{props.children}</Main>
+    </StyledMiddle>
   );
 };
 
 Middle.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Middle;

@@ -1,38 +1,27 @@
 import { Grid } from "@material-ui/core";
 import Header from "../sections/header/header";
 import Footer from "../sections/footer/footer";
-import Logo from "../commons/logo/logo";
-import Dev from "../commons/dev/dev";
-import MobileMenu from "../commons/mobile-menu/mobile-menu";
 import Middle from "../sections/middle/middle";
+import styled from "styled-components";
+
+const StyledBaseLayout = styled.div`
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "middle middle"
+    "footer footer";
+  grid-template-rows: 100px 1fr 100px;
+  min-height: 100vh;
+`;
 
 const BaseLayout = (props) => {
   return (
-    <Grid container>
-      <Grid
-        item
-        container
-        justify="space-between"
-        alignContent="center"
-        xs={12}
-        component={Header}
-      >
-        <Logo />
-        <MobileMenu />
-      </Grid>
+    <Grid container component={StyledBaseLayout}>
+      <Header/>
       <Middle>
         {props.children}
       </Middle>
-      <Grid
-        container
-        alignItems="center"
-        component={Footer}
-      >
-        <Grid item xs={6}>
-          <Logo />
-        </Grid>
-        <Grid item xs={6} component={Dev} />
-      </Grid>
+      <Footer/>
     </Grid>
   );
 };

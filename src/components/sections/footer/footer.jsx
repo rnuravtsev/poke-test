@@ -1,13 +1,23 @@
 import styled from "styled-components";
+import { Grid } from "@material-ui/core";
+import Logo from "../../commons/logo/logo";
+import Dev from "../../commons/dev/dev";
 
-const Footer = styled.section`
+const StyledFooter = styled.footer`
+  grid-area: footer;
   padding: 15px;
-  width: 100%;
-  height: 11vh;
   background-color: ${(p) => p.theme.palette.grey.main};
-  @media ${(p) => p.theme.media.phone} {
-    height: auto;
-  }
 `;
+
+const Footer = () => {
+  return (
+    <Grid container alignItems="center" component={StyledFooter}>
+      <Grid item xs={6}>
+        <Logo />
+      </Grid>
+      <Grid item xs={6} component={Dev} />
+    </Grid>
+  );
+};
 
 export default Footer;

@@ -1,11 +1,28 @@
 import styled from "styled-components";
+import Logo from "../../commons/logo/logo";
+import MobileMenu from "../../commons/mobile-menu/mobile-menu";
+import { Grid } from "@material-ui/core";
 
-const Header = styled.section`
+const StyledHeader = styled.header`
+  grid-area: header;
   padding: 15px;
   background-color: ${(p) => p.theme.palette.grey.main};
-  @media ${(p) => p.theme.media.tablet} {
-    height: 11vh;
-  }
 `;
+
+const Header = () => {
+  return (
+    <Grid
+      item
+      container
+      justify="space-between"
+      alignContent="center"
+      xs={12}
+      component={StyledHeader}
+    >
+      <Logo />
+      <MobileMenu />
+    </Grid>
+  );
+};
 
 export default Header;
