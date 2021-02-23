@@ -7,9 +7,9 @@ import styled from "styled-components";
 const StyledBaseLayout = styled.div`
   display: grid;
   grid-template-areas:
-    "header header"
-    "middle middle"
-    "footer footer";
+    "header"
+    "middle"
+    "footer";
   grid-template-rows: 100px 1fr 100px;
   min-height: 100vh;
 `;

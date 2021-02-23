@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Sidebar from "../../commons/sidebar/sidebar";
-import Nav from "../../nav/nav";
+import Nav from "../nav/nav";
 import Main from "../../commons/main/main";
 
 const StyledMiddle = styled.div`

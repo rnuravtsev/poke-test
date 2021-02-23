@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Logo from "../../commons/logo/logo";
-import MobileMenu from "../../commons/mobile-menu/mobile-menu";
+import MobileMenu from "../mobile-menu/mobile-menu";
 import { Grid } from "@material-ui/core";
 
 const StyledHeader = styled.header`
